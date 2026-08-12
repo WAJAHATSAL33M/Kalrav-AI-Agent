@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Kalrav Ai Agent
+ * Plugin Name: AI Site Assistant
  * Description: AI-powered assistant for WordPress websites.
  * Version: 0.1.0
  * Author: AI Site Assistant Team
@@ -12,26 +12,17 @@ if ( ! defined( 'ABSPATH' ) ) {
     exit;
 }
 
-/**
- * Plugin version.
- */
 define( 'AI_SITE_ASSISTANT_VERSION', '0.1.0' );
-
-/**
- * Plugin directory.
- */
 define( 'AI_SITE_ASSISTANT_DIR', plugin_dir_path( __FILE__ ) );
-
-/**
- * Plugin URL.
- */
 define( 'AI_SITE_ASSISTANT_URL', plugin_dir_url( __FILE__ ) );
 
 /**
- * Plugin initialization.
+ * Load provider interface.
  */
-function ai_site_assistant_init() {
-    // Plugin initialization will be added here.
-}
+require_once AI_SITE_ASSISTANT_DIR . 'providers/interface-provider.php';
 
-add_action( 'plugins_loaded', 'ai_site_assistant_init' );
+/**
+ * Load AI providers.
+ */
+require_once AI_SITE_ASSISTANT_DIR . 'providers/class-openai.php';
+require_once AI_SITE_ASSISTANT_DIR . 'providers/class-anthropic.php';
