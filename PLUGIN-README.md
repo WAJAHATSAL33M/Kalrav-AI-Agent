@@ -1,4 +1,4 @@
-=== Kalrav-Style AI Agent ===
+=== Kalrav-Style AI Agent ===<BR>
 Contributors: you
 Tags: ai, chatbot, chat widget, claude, openai
 Requires at least: 6.0
